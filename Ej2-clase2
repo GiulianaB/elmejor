@@ -1,0 +1,11 @@
+#Mapa
+import matplotlib.pyplot as plt
+import matplotlib.image as mpi
+mapa=mpi.imread('gl-latlong-1km-landcover.preview.jpg')
+
+plt.imshow(mapa)
+plt.show()
+#image_file=cbook.get_sample_data('gl-latlong-1km-landcover.preview.jpg')
+
+
+
