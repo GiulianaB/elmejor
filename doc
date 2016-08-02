@@ -1,0 +1,24 @@
+#Ejercicio 1-tierra/agua
+import numpy as np
+data=np.fromfile('gl-latlong-1km-landcover.bsq',dtype=np.uint8)
+print(data)
+length_data=len(data)
+print(length_data)
+data_matriz=np.reshape(data,(21600,43200))
+print(data_matriz)
+size_matriz=len(data_matriz)
+print(size_matriz)
+
+lat=input('latitud(-90°-90°)')
+long=input('longitud (-180°-180°)')
+lat=int(lat)
+long=int(long)
+pixel_x=21600*(-1*lat+90)//180
+pixel_y=43200*(long+180)//360
+
+punto=data_matriz[pixel_x,pixel_y]
+
+if punto==0:
+   print('agua')
+else:
+   print('tierra')
